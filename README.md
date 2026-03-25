@@ -48,3 +48,26 @@ Contacto
 
 Licencia
 - Añadir aquí la licencia del proyecto si aplica (por ejemplo, MIT).
+
+Gestor de dependencias
+- **Archivo**: `requirements.txt` — Lista de dependencias del proyecto.
+- **Script gestor**: `scripts/manage_deps.py` — Pequeño gestor que usa `pip` para instalar, desinstalar y sincronizar dependencias.
+
+Ejemplos de uso
+
+```bash
+# Instalar un paquete y actualizar requirements.txt
+python scripts/manage_deps.py install fastapi --sync
+
+# Desinstalar un paquete y actualizar requirements.txt
+python scripts/manage_deps.py uninstall fastapi --sync
+
+# Generar/actualizar requirements.txt desde el entorno actual
+python scripts/manage_deps.py freeze
+
+# Instalar desde requirements.txt
+python scripts/manage_deps.py install-file
+
+# Ver paquetes instalados
+python scripts/manage_deps.py list
+```
